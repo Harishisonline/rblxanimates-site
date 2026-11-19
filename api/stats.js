@@ -130,7 +130,8 @@ module.exports = async (req, res) => {
   await Promise.all(jobs);
 
   const any = out.youtube || out.instagram;
-  // cache good answers at the edge for 15 min; errors only briefly so a fixed key shows up fast
+  if (!any) out.source = "unavailable"; // page keeps its snapshot; 200 so browsers don't log an error
+  // cache good answers at the edge for 15 min; misses only briefly so a new key shows up fast
   res.setHeader("Cache-Control", any ? "public, s-maxage=900, stale-while-revalidate=86400" : "public, s-maxage=60");
-  res.status(any ? 200 : 503).json(out);
+  res.status(200).json(out);
 };
