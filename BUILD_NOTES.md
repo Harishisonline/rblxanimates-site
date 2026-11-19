@@ -142,3 +142,14 @@ Reduced motion: section-by-section still camera, LCP 163–450 ms. slop_check: 0
 - "Work with us" adds an Instagram DM button ("Connect on DMs").
 - Footer legal line replaced at the owner's request with a forward-looking line. NOTE: the Roblox
   non-affiliation disclaimer is no longer on the page.
+
+## v3: live data + speed (owner request)
+- Client-side live numbers: live.js + /api/stats (Vercel function, keys server-side) with a
+  data/stats.json snapshot fallback and a localStorage cache. See LIVE_DATA_SETUP.md.
+- Story ring = top 5 across both platforms (deduped by title overlap); YouTube and Instagram
+  sections each get a top-5 rail; Results "most viewed" cards follow the #1 of each platform.
+- Speed: one-file +esm bundles with modulepreload (after the import map!), three.js prefetched,
+  town textures pooled (8 shared instead of ~200). Load 1.5 s → 0.7 s laptop, 1.9 s → 0.9 s
+  throttled phone; longest main-thread task 314 ms → 70 ms.
+- Refresh starts at the top (history.scrollRestoration = manual; #hash links still land).
+- Bug caught in testing: modulepreload placed before the import map broke every module.

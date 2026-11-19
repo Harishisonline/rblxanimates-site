@@ -87,12 +87,19 @@ if (!reduce) {
 }
 
 // ---------- story ring: scroll turns it, the card facing you lights up ----------
-const cards = [...document.querySelectorAll(".card")];
-cards.forEach((c, i) => c.style.setProperty("--i", i));
 const ring = document.querySelector(".ring");
+let cards = [], STEP = 72, lastSpin = 0;
+function collectCards() {
+  cards = [...document.querySelectorAll(".ring .card")];
+  STEP = 360 / Math.max(cards.length, 3);
+  ring?.style.setProperty("--step", `${STEP}deg`);
+  cards.forEach((c, i) => c.style.setProperty("--i", i));
+  lightCards(lastSpin);
+}
 function lightCards(spin) {
+  lastSpin = spin;
   cards.forEach((c, i) => {
-    let a = ((i * 60 + spin) % 360 + 540) % 360 - 180; // -180..180, 0 = facing the viewer
+    let a = ((i * STEP + spin) % 360 + 540) % 360 - 180; // -180..180, 0 = facing the viewer
     const face = Math.cos((a * Math.PI) / 180);
     c.style.setProperty("--lit", (0.3 + 0.7 * Math.max(0, face) ** 1.5).toFixed(3));
     c.style.opacity = (0.08 + 0.92 * Math.max(0, face) ** 2).toFixed(3);
@@ -100,11 +107,12 @@ function lightCards(spin) {
     c.querySelector("a").tabIndex = face > 0.5 ? 0 : -1;
   });
 }
+collectCards();
+document.addEventListener("ring:changed", collectCards); // live.js re-ranked the stories
 if (!reduce && ring) {
   const state = { spin: 0 };
-  lightCards(0);
   gsap.to(state, {
-    spin: -300, ease: "none",
+    spin: () => -(cards.length - 1) * STEP, ease: "none",
     scrollTrigger: { trigger: ".stories__pin", start: "top top", end: small ? "+=160%" : "+=200%", pin: true, scrub: 0.8 },
     onUpdate: () => { ring.style.setProperty("--spin", `${state.spin}deg`); lightCards(state.spin); },
   });
@@ -131,16 +139,7 @@ if (finePointer && !reduce) {
   });
 }
 
-// ---------- counters ----------
-const fmt = (n) => Math.round(n).toLocaleString("en-US");
-document.querySelectorAll(".count").forEach((el) => {
-  const to = +el.dataset.to, suffix = el.dataset.suffix || "";
-  if (reduce) return;
-  const o = { v: 0 };
-  el.textContent = "0" + suffix;
-  ScrollTrigger.create({ trigger: el, start: "top 88%", once: true,
-    onEnter: () => gsap.to(o, { v: to, duration: 1.6, ease: "expo.out", onUpdate: () => (el.textContent = fmt(o.v) + suffix) }) });
-});
+// counters: handled by live.js (they re-animate when live numbers arrive)
 
 // ---------- 3D entrances for the lower sections (one style, once) ----------
 if (!reduce) {
@@ -152,3 +151,10 @@ if (!reduce) {
 }
 
 measure(); onScroll();
+
+addEventListener("load", () => {
+  ScrollTrigger.refresh();
+  const target = location.hash && document.querySelector(location.hash);
+  if (target) lenis ? lenis.scrollTo(target.closest(".pin-spacer") || target, { immediate: true }) : target.scrollIntoView();
+  else { lenis ? lenis.scrollTo(0, { immediate: true }) : scrollTo(0, 0); }
+});

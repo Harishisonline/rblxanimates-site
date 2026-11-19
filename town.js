@@ -87,6 +87,16 @@ export function initTown(canvas, { small, reduce, videos = {}, posters = {} }) {
 
   // buildings
   const blocks = []; let seed = 11;
+  // shared pools: 8 window textures and one material per (wall colour, texture) pair,
+  // instead of ~200 one-off textures that froze the main thread on load
+  const TEX = Array.from({ length: 8 }, (_, i) => windowTextures(i * 7919 + 13));
+  const MATS = new Map();
+  const wallMat = (ci, ti) => {
+    const k = ci * 8 + ti;
+    if (!MATS.has(k)) MATS.set(k, new THREE.MeshStandardMaterial({ color: PAL.walls[ci], map: TEX[ti].map, emissive: "#ffffff", emissiveMap: TEX[ti].emissive, emissiveIntensity: 0.75, roughness: 0.85 }));
+    return MATS.get(k);
+  };
+  const roofMat = new THREE.MeshStandardMaterial({ color: "#11131b", roughness: 0.9 });
   const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
   const rows = small ? [-5.6, 5.6, -11.5, 11.5] : [-5.6, 5.6, -11.5, 11.5, -17.5, 17.5];
   for (const x0 of rows) {
@@ -97,12 +107,11 @@ export function initTown(canvas, { small, reduce, videos = {}, posters = {} }) {
       const w = 3 + rnd() * 1.8, d = 3 + rnd() * 1.6;
       const h = (inner ? 3 : 7) + rnd() * (inner ? 8 : 14);
       const geo = new THREE.BoxGeometry(w, h, d); scaleBoxUVs(geo, w, h, d);
-      const tex = windowTextures(Math.floor(rnd() * 99999) + 1);
-      const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: PAL.walls[Math.floor(rnd() * PAL.walls.length)], map: tex.map, emissive: "#ffffff", emissiveMap: tex.emissive, emissiveIntensity: 0.75, roughness: 0.85 }));
+      const m = new THREE.Mesh(geo, wallMat(Math.floor(rnd() * PAL.walls.length), Math.floor(rnd() * 8)));
       m.position.set(x0 + (rnd() - 0.5) * 1.2, h / 2, z); m.userData.y = h / 2;
       if (rnd() < 0.45) {
         const rw = w * (0.4 + rnd() * 0.3), rh = 0.8 + rnd() * 1.6;
-        const roof = new THREE.Mesh(new THREE.BoxGeometry(rw, rh, rw), new THREE.MeshStandardMaterial({ color: "#11131b", roughness: 0.9 }));
+        const roof = new THREE.Mesh(new THREE.BoxGeometry(rw, rh, rw), roofMat);
         roof.position.y = h / 2 + rh / 2; m.add(roof);
       }
       scene.add(m); blocks.push(m);
