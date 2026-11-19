@@ -15,6 +15,7 @@ document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new D
 let lenis;
 if (!reduce) {
   lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+  window.__lenis = lenis; // blockbar.js uses it for smooth section jumps
   lenis.on("scroll", ScrollTrigger.update);
   gsap.ticker.add((t) => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
@@ -80,10 +81,10 @@ if (hasWebGL && !saveData) whenIdle(() => import("./town.js").then(({ initTown }
 
 // ---------- hero entrance (the h1 is LCP: it moves, never fades from 0) ----------
 if (!reduce) {
-  gsap.from(".hero .display", { y: 36, duration: 1.2, ease: "expo.out", delay: 0.15 });
+  gsap.from(".hero .display", { y: 36, duration: 1.2, ease: "expo.out", delay: 0.15, clearProps: "transform,opacity" });
   // text never starts invisible (the lede is the LCP element on phones); only the buttons fade
   gsap.from(".hero .kicker, .hero .lede", { y: 22, duration: 1, ease: "expo.out", stagger: 0.08, delay: 0.3 });
-  gsap.from(".hero .actions", { y: 22, opacity: 0, duration: 1, ease: "expo.out", delay: 0.45 });
+  gsap.from(".hero .actions", { y: 22, opacity: 0, duration: 1, ease: "expo.out", delay: 0.45, clearProps: "transform,opacity" });
 }
 
 // ---------- story ring: scroll turns it, the card facing you lights up ----------
@@ -129,14 +130,6 @@ if (finePointer && !reduce) {
     });
     d.addEventListener("pointerleave", () => { d.style.setProperty("--ry", `${base}deg`); d.style.setProperty("--rx", "4deg"); });
   });
-  // magnetic pills and platform cards
-  document.querySelectorAll(".pill, .platform-card").forEach((el) => {
-    const x = gsap.quickTo(el, "x", { duration: 0.6, ease: "expo.out" });
-    const y = gsap.quickTo(el, "y", { duration: 0.6, ease: "expo.out" });
-    const k = el.classList.contains("platform-card") ? 0.08 : 0.25;
-    el.addEventListener("pointermove", (e) => { const r = el.getBoundingClientRect(); x((e.clientX - r.left - r.width / 2) * k); y((e.clientY - r.top - r.height / 2) * k); });
-    el.addEventListener("pointerleave", () => { x(0); y(0); });
-  });
 }
 
 // counters: handled by live.js (they re-animate when live numbers arrive)
@@ -144,9 +137,9 @@ if (finePointer && !reduce) {
 // ---------- 3D entrances for the lower sections (one style, once) ----------
 if (!reduce) {
   gsap.utils.toArray(".split__copy, .device, .board, .results__head, .made h2, .closer__title, .platform-card").forEach((el) => {
-    gsap.from(el, { y: 50, opacity: 0, duration: 1.1, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 85%", once: true } });
+    gsap.from(el, { y: 50, opacity: 0, duration: 1.1, ease: "expo.out", clearProps: "transform,opacity", scrollTrigger: { trigger: el, start: "top 85%", once: true } });
   });
-  gsap.from(".steps li", { rotateX: 55, y: 60, opacity: 0, duration: 1.2, ease: "expo.out", stagger: 0.12,
+  gsap.from(".steps li", { rotateX: 55, y: 60, opacity: 0, duration: 1.2, ease: "expo.out", stagger: 0.12, clearProps: "transform,opacity",
     scrollTrigger: { trigger: ".steps", start: "top 80%", once: true } });
 }
 
@@ -158,3 +151,18 @@ addEventListener("load", () => {
   if (target) lenis ? lenis.scrollTo(target.closest(".pin-spacer") || target, { immediate: true }) : target.scrollIntoView();
   else { lenis ? lenis.scrollTo(0, { immediate: true }) : scrollTo(0, 0); }
 });
+
+// ---------- cursor ring: follows the pointer, grows over anything clickable, squeezes on press ----------
+if (finePointer && !reduce) {
+  const ring = Object.assign(document.createElement("div"), { className: "cursor-ring" });
+  const dot = Object.assign(document.createElement("div"), { className: "cursor-dot" });
+  ring.setAttribute("aria-hidden", "true"); dot.setAttribute("aria-hidden", "true");
+  document.body.append(ring, dot);
+  const rx = gsap.quickTo(ring, "x", { duration: 0.35, ease: "power3.out" }), ry = gsap.quickTo(ring, "y", { duration: 0.35, ease: "power3.out" });
+  const dx = gsap.quickTo(dot, "x", { duration: 0.08 }), dy = gsap.quickTo(dot, "y", { duration: 0.08 });
+  addEventListener("pointermove", (e) => { rx(e.clientX); ry(e.clientY); dx(e.clientX); dy(e.clientY); document.body.classList.add("has-cursor"); }, { passive: true });
+  document.addEventListener("pointerover", (e) => ring.classList.toggle("is-hover", !!e.target.closest("a, button, .card, [role=button]")));
+  addEventListener("pointerdown", () => ring.classList.add("is-press"));
+  addEventListener("pointerup", () => ring.classList.remove("is-press"));
+  document.addEventListener("pointerleave", () => document.body.classList.remove("has-cursor"));
+}

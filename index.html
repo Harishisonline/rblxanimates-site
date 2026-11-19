@@ -87,7 +87,7 @@
 
   <main id="main">
     <!-- 0 · skyline -->
-    <section id="top" class="stage stage--hero" data-station="0" aria-label="Intro">
+    <section id="top" class="stage stage--hero" data-station="0" data-bb-label="Intro" aria-label="Intro">
       <div class="hero">
         <p class="kicker">Animated Roblox stories on YouTube and Instagram</p>
         <h1 class="display">Every block<br />has a story.</h1>
@@ -105,7 +105,7 @@
     </section>
 
     <!-- 1 · down main street: the story ring -->
-    <section id="stories" class="stage stage--stories" data-station="1" aria-labelledby="stories-h">
+    <section id="stories" class="stage stage--stories" data-station="1" data-bb-label="Top stories" aria-labelledby="stories-h">
       <div class="stories__pin">
         <header class="stories__head">
           <h2 id="stories-h">The five most-watched stories.</h2>
@@ -124,7 +124,7 @@
     </section>
 
     <!-- 2 · the YouTube billboard -->
-    <section id="youtube" class="stage stage--split" data-station="2" aria-labelledby="yt-h">
+    <section id="youtube" class="stage stage--split" data-station="2" data-bb-label="YouTube" aria-labelledby="yt-h">
       <div class="split">
         <div class="split__copy">
           <p class="platform"><svg aria-hidden="true"><use href="#i-yt"/></svg>YouTube Shorts</p>
@@ -157,7 +157,7 @@
     </section>
 
     <!-- 3 · the Instagram wall screen -->
-    <section id="instagram" class="stage stage--split stage--flip" data-station="3" aria-labelledby="ig-h">
+    <section id="instagram" class="stage stage--split stage--flip" data-station="3" data-bb-label="Instagram" aria-labelledby="ig-h">
       <div class="split">
         <div class="split__copy">
           <p class="platform"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram Reels</p>
@@ -190,7 +190,7 @@
     </section>
 
     <!-- 4 · above the rooftops: results -->
-    <section id="results" class="stage stage--results" data-station="4" aria-labelledby="results-h">
+    <section id="results" class="stage stage--results" data-station="4" data-bb-label="Results" aria-labelledby="results-h">
       <header class="results__head">
         <p class="kicker">Results so far</p>
         <h2 id="results-h"><span class="count" data-stat="total.views" data-suffix="+">28,732+</span> views since launch.</h2>
@@ -234,7 +234,7 @@
     </section>
 
     <!-- 5 · street level: how they're made -->
-    <section id="made" class="stage stage--made" data-station="5" aria-labelledby="made-h">
+    <section id="made" class="stage stage--made" data-station="5" data-bb-label="How it's made" aria-labelledby="made-h">
       <div class="made">
         <h2 id="made-h">Made frame by frame, not screen-recorded.</h2>
         <ol class="steps">
@@ -246,7 +246,7 @@
     </section>
 
     <!-- 6 · pull back: the closer -->
-    <section id="follow" class="stage stage--closer" data-station="6" aria-labelledby="closer-h">
+    <section id="follow" class="stage stage--closer" data-station="6" data-bb-label="Follow" aria-labelledby="closer-h">
       <h2 id="closer-h" class="closer__title">The next story is already somewhere in this town.</h2>
       <p class="body">Be the first to see it.</p>
       <div class="closer__actions">
@@ -301,5 +301,6 @@
 
   <script type="module" src="./main.js"></script>
   <script type="module" src="./live.js"></script>
+  <script type="module" src="./blockbar.js"></script>
 </body>
 </html>
