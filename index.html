@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RBLX Animates · Animated Roblox stories on YouTube and Instagram</title>
+  <meta name="description" content="Cinematic Roblox-style animated stories: drama, horror, comedy and mystery. 24.5K+ views in the first week. Watch on YouTube Shorts and Instagram Reels, @rblxanimates." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RBLX Animates · Every block has a story" />
+  <meta property="og:description" content="Cinematic Roblox-style animated stories on YouTube Shorts and Instagram Reels." />
+  <meta property="og:image" content="./og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#09090b" />
+  <link rel="icon" href="./media/avatar.jpg" />
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RBLX Animates",
+    "slogan": "Every block has a story.",
+    "description": "Cinematic Roblox-style animated short stories: drama, horror, comedy and mystery.",
+    "foundingDate": "2026-11-13",
+    "logo": "./media/avatar.jpg",
+    "email": "harishp0132@gmail.com",
+    "sameAs": ["https://www.youtube.com/@rblxanimates", "https://www.instagram.com/rblxanimates/"]
+  }
+  </script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.13.0/index.js",
+      "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.13.0/ScrollTrigger.js",
+      "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.mjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-yt" viewBox="0 0 28 20"><rect width="28" height="20" rx="6" fill="#ff0033"/><path d="M11 5.5v9l8-4.5z" fill="#fff"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><defs><radialGradient id="igg" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="7" fill="url(#igg)"/><rect x="5" y="5" width="14" height="14" rx="4.2" fill="none" stroke="#fff" stroke-width="1.9"/><circle cx="12" cy="12" r="3.4" fill="none" stroke="#fff" stroke-width="1.9"/><circle cx="16.6" cy="7.4" r="1.15" fill="#fff"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 6l7 5 7-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+  <canvas id="town" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="RBLX Animates, back to top">
+      <img src="./media/avatar.jpg" alt="" width="40" height="40" />
+      <span>RBLX Animates</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#stories">Stories</a>
+      <a href="#youtube">YouTube</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#results">Results</a>
+    </nav>
+    <a class="pill pill--sm" href="https://www.youtube.com/@rblxanimates?sub_confirmation=1" target="_blank" rel="noopener">
+      <svg class="pill__logo" aria-hidden="true"><use href="#i-yt"/></svg><span>Subscribe</span>
+    </a>
+  </header>
+
+  <main id="main">
+    <!-- 0 · skyline -->
+    <section id="top" class="stage stage--hero" data-station="0" aria-label="Intro">
+      <div class="hero">
+        <p class="kicker">Animated Roblox stories on YouTube and Instagram</p>
+        <h1 class="display">Every block<br />has a story.</h1>
+        <p class="lede">Short films about towns with one strange rule: laughs that charge your battery, a number on your wrist that decides your life. Written, voiced and animated frame by frame.</p>
+        <div class="actions">
+          <a class="pill" href="https://www.youtube.com/@rblxanimates?sub_confirmation=1" target="_blank" rel="noopener">
+            <svg class="pill__logo" aria-hidden="true"><use href="#i-yt"/></svg><span>Subscribe on YouTube</span>
+          </a>
+          <a class="pill pill--ghost" href="https://www.instagram.com/rblxanimates/" target="_blank" rel="noopener">
+            <svg class="pill__logo" aria-hidden="true"><use href="#i-ig"/></svg><span>Follow on Instagram</span>
+          </a>
+        </div>
+      </div>
+      <p class="scrollcue" aria-hidden="true"><span></span>Scroll into Blox Town</p>
+    </section>
+
+    <!-- 1 · down main street: the story ring -->
+    <section id="stories" class="stage stage--stories" data-station="1" aria-labelledby="stories-h">
+      <div class="stories__pin">
+        <header class="stories__head">
+          <h2 id="stories-h">Six stories in. One rule each.</h2>
+          <p>Scroll to turn the reel. Tap a story to watch it.</p>
+        </header>
+        <div class="ring-stage">
+          <ol class="ring">
+            <li class="card"><a href="https://www.youtube.com/shorts/5QmctXcWvp0" target="_blank" rel="noopener"><img src="./media/eps/5QmctXcWvp0.jpg" alt="" width="360" height="640" /><span class="card__genre">Comedy</span><span class="card__title">In this town, laughing charges you.</span></a></li>
+            <li class="card"><a href="https://www.youtube.com/shorts/x_Jv9GBD8Oc" target="_blank" rel="noopener"><img src="./media/eps/x_Jv9GBD8Oc.jpg" alt="" width="360" height="640" /><span class="card__genre">Drama</span><span class="card__title">My bully begged me for help.</span></a></li>
+            <li class="card"><a href="https://www.youtube.com/shorts/ump5uhwk8LM" target="_blank" rel="noopener"><img src="./media/eps/ump5uhwk8LM.jpg" alt="" width="360" height="640" /><span class="card__genre">Drama</span><span class="card__title">I told one secret. By lunch, everyone knew.</span></a></li>
+            <li class="card"><a href="https://www.youtube.com/shorts/ZJiItqao6N0" target="_blank" rel="noopener"><img src="./media/eps/ZJiItqao6N0.jpg" alt="" width="360" height="640" /><span class="card__genre">Drama</span><span class="card__title">They laughed at the poor kid.</span></a></li>
+            <li class="card"><a href="https://www.youtube.com/shorts/VZqRFIzQjU4" target="_blank" rel="noopener"><img src="./media/eps/VZqRFIzQjU4.jpg" alt="" width="360" height="640" /><span class="card__genre">Mystery</span><span class="card__title">Your wrist number decides everything.</span></a></li>
+            <li class="card"><a href="https://www.youtube.com/shorts/SIOpqV9Y4mE" target="_blank" rel="noopener"><img src="./media/eps/SIOpqV9Y4mE.jpg" alt="" width="360" height="640" /><span class="card__genre">Trailer</span><span class="card__title">Welcome to Blox Town.</span></a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · the YouTube billboard -->
+    <section id="youtube" class="stage stage--split" data-station="2" aria-labelledby="yt-h">
+      <div class="split">
+        <div class="split__copy">
+          <p class="platform"><svg aria-hidden="true"><use href="#i-yt"/></svg>YouTube Shorts</p>
+          <h2 id="yt-h">The full story, in under two minutes.</h2>
+          <p class="body">Every episode is on YouTube Shorts: the cliffhangers, the part twos, the twist you didn't see coming. Subscribe and the next one shows up in your feed.</p>
+          <dl class="mini">
+            <div><dt>Views</dt><dd>8.5K</dd></div>
+            <div><dt>Likes</dt><dd>142</dd></div>
+            <div><dt>Subscribers</dt><dd>27</dd></div>
+          </dl>
+          <a class="pill" href="https://www.youtube.com/@rblxanimates?sub_confirmation=1" target="_blank" rel="noopener">
+            <svg class="pill__logo" aria-hidden="true"><use href="#i-yt"/></svg><span>Subscribe on YouTube</span><svg class="pill__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+        <a class="device" href="https://www.youtube.com/shorts/x_Jv9GBD8Oc" target="_blank" rel="noopener" aria-label="Watch My bully begged me for help on YouTube">
+          <video id="v-yt" src="./media/yt.mp4" poster="./media/yt-poster.jpg" muted loop playsinline preload="metadata"></video>
+          <span class="device__badge"><svg aria-hidden="true"><use href="#i-yt"/></svg>Now playing · My bully begged me for help</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3 · the Instagram wall screen -->
+    <section id="instagram" class="stage stage--split stage--flip" data-station="3" aria-labelledby="ig-h">
+      <div class="split">
+        <div class="split__copy">
+          <p class="platform"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram Reels</p>
+          <h2 id="ig-h">Where the stories travel furthest.</h2>
+          <p class="body">On Instagram the reels reach people who've never heard of the channel. Our battery-laugh story alone was played 9,100 times in two days. Follow for the reels and the behind-the-scenes.</p>
+          <dl class="mini">
+            <div><dt>Views, 30 days</dt><dd>16K</dd></div>
+            <div><dt>Top reel</dt><dd>9.1K</dd></div>
+            <div><dt>Growth</dt><dd>+100%</dd></div>
+          </dl>
+          <a class="pill pill--ig" href="https://www.instagram.com/rblxanimates/" target="_blank" rel="noopener">
+            <svg class="pill__logo" aria-hidden="true"><use href="#i-ig"/></svg><span>Follow on Instagram</span><svg class="pill__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+        <a class="device device--ig" href="https://www.instagram.com/reel/Df5kk4dugB1/" target="_blank" rel="noopener" aria-label="Watch the battery-laugh reel on Instagram">
+          <video id="v-ig" src="./media/ig.mp4" poster="./media/ig-poster.jpg" muted loop playsinline preload="metadata"></video>
+          <span class="device__badge"><svg aria-hidden="true"><use href="#i-ig"/></svg>Now playing · Your battery charges when people laugh</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4 · above the rooftops: results -->
+    <section id="results" class="stage stage--results" data-station="4" aria-labelledby="results-h">
+      <header class="results__head">
+        <p class="kicker">Results so far</p>
+        <h2 id="results-h"><span class="count" data-to="24500" data-suffix="+">24,500+</span> views in the first week.</h2>
+        <p class="body">From the launch on 13 November 2026 to 20 November, across both channels. Numbers from YouTube Studio and Instagram's professional dashboard.</p>
+      </header>
+      <div class="results__grid">
+        <article class="board">
+          <h3 class="board__title"><svg aria-hidden="true"><use href="#i-yt"/></svg>YouTube <span>all time</span></h3>
+          <dl class="stats">
+            <div class="stat stat--big"><dt>Views</dt><dd><span class="count" data-to="8500">8,500</span></dd></div>
+            <div class="stat"><dt>Last 7 days</dt><dd><span class="count" data-to="4500">4,500</span></dd></div>
+            <div class="stat"><dt>Likes</dt><dd><span class="count" data-to="142">142</span></dd></div>
+            <div class="stat"><dt>Subscribers</dt><dd><span class="count" data-to="27">27</span></dd></div>
+            <div class="stat"><dt>Comments</dt><dd><span class="count" data-to="8">8</span></dd></div>
+          </dl>
+          <a class="top" href="https://www.youtube.com/shorts/x_Jv9GBD8Oc" target="_blank" rel="noopener">
+            <img src="./media/top-yt.jpg" alt="Frame from My bully begged me for help, Part 2" width="720" height="1280" loading="lazy" />
+            <span class="top__label">Most viewed on YouTube</span>
+            <span class="top__title">My bully begged me for help. Should I help him? Part 2</span>
+            <span class="top__meta">1,579 views · 35 likes</span>
+          </a>
+        </article>
+        <article class="board">
+          <h3 class="board__title"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram <span>last 30 days</span></h3>
+          <dl class="stats">
+            <div class="stat stat--big"><dt>Views</dt><dd><span class="count" data-to="16033">16,033</span></dd></div>
+            <div class="stat"><dt>vs. previous 30 days</dt><dd>+100%</dd></div>
+            <div class="stat"><dt>Top reel plays</dt><dd><span class="count" data-to="9100">9,100</span></dd></div>
+            <div class="stat"><dt>Top reel likes</dt><dd><span class="count" data-to="207">207</span></dd></div>
+            <div class="stat"><dt>Followers</dt><dd><span class="count" data-to="12">12</span></dd></div>
+          </dl>
+          <a class="top" href="https://www.instagram.com/reel/Df5kk4dugB1/" target="_blank" rel="noopener">
+            <img src="./media/top-ig.jpg" alt="Frame from the battery-laugh reel" width="720" height="1280" loading="lazy" />
+            <span class="top__label">Most viewed on Instagram</span>
+            <span class="top__title">In this town, your battery only charges when people laugh</span>
+            <span class="top__meta">9.1K plays · 207 likes</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5 · street level: how they're made -->
+    <section id="made" class="stage stage--made" data-station="5" aria-labelledby="made-h">
+      <div class="made">
+        <h2 id="made-h">Made frame by frame, not screen-recorded.</h2>
+        <ol class="steps">
+          <li><span class="steps__n">01</span><h3>One rule breaks a town</h3><p>Each story starts as a single line. In this town a wrist number decides your fate, or laughing is the only thing that charges you. Then we follow one kid who has to live with it.</p></li>
+          <li><span class="steps__n">02</span><h3>Voices, music, every footstep</h3><p>Every character gets a voice, and every lunch tray, door slam and storm gets its own sound, so the story lands before the captions do.</p></li>
+          <li><span class="steps__n">03</span><h3>Lit and animated in Blender</h3><p>Sets, blocky characters, cameras and light are built shot by shot, so a school hallway at lunch looks like a film.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6 · pull back: the closer -->
+    <section id="follow" class="stage stage--closer" data-station="6" aria-labelledby="closer-h">
+      <h2 id="closer-h" class="closer__title">The next story is already somewhere in this town.</h2>
+      <p class="body">Be the first to see it.</p>
+      <div class="closer__actions">
+        <a class="platform-card platform-card--yt" href="https://www.youtube.com/@rblxanimates?sub_confirmation=1" target="_blank" rel="noopener">
+          <svg class="platform-card__logo" aria-hidden="true"><use href="#i-yt"/></svg>
+          <span class="platform-card__name">YouTube</span>
+          <span class="platform-card__handle">@rblxanimates</span>
+          <span class="platform-card__go">Subscribe <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="platform-card platform-card--ig" href="https://www.instagram.com/rblxanimates/" target="_blank" rel="noopener">
+          <svg class="platform-card__logo" aria-hidden="true"><use href="#i-ig"/></svg>
+          <span class="platform-card__name">Instagram</span>
+          <span class="platform-card__handle">@rblxanimates</span>
+          <span class="platform-card__go">Follow <svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="./media/avatar.jpg" alt="" width="56" height="56" loading="lazy" />
+        <p class="footer__name">RBLX Animates</p>
+        <p class="footer__tag">Every block has a story.</p>
+      </div>
+      <nav class="footer__col" aria-label="Watch">
+        <h3>Watch</h3>
+        <a href="https://www.youtube.com/@rblxanimates/shorts" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-yt"/></svg>YouTube Shorts</a>
+        <a href="https://www.instagram.com/rblxanimates/reels/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Instagram Reels</a>
+      </nav>
+      <nav class="footer__col" aria-label="Explore">
+        <h3>Explore</h3>
+        <a href="#stories">Stories</a>
+        <a href="#results">Results</a>
+        <a href="#made">How they're made</a>
+      </nav>
+      <div class="footer__col">
+        <h3>Work with us</h3>
+        <p>Collabs, brand stories, custom animations.</p>
+        <a class="footer__mail" href="mailto:harishp0132@gmail.com?subject=RBLX%20Animates%20collab"><svg aria-hidden="true"><use href="#i-mail"/></svg>harishp0132@gmail.com</a>
+        <a class="footer__mail footer__dm" href="https://www.instagram.com/direct/t/17871934077663400/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg>Connect on DMs</a>
+      </div>
+    </div>
+    <p class="footer__word" data-text="RBLX Animates" aria-hidden="true">RBLX Animates</p>
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> RBLX Animates</p>
+      <p class="footer__legal">More towns, more strange rules, more twists. The best stories in Blox Town haven't been told yet, so stick around.</p>
+      <p>Site by <a href="mailto:harishp0132@gmail.com">Harish</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
