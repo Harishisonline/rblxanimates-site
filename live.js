@@ -140,6 +140,16 @@ function setTops(d) {
   });
 }
 
+const LAUNCH = Date.parse("2026-11-13T00:00:00Z");
+function setPeriod(d) {
+  const firstWeek = Date.parse(d.updatedAt) - LAUNCH <= 8 * 86400000; // through the end of day 7
+  const label = document.querySelector("[data-period]"), body = document.querySelector("[data-period-body]");
+  if (label) label.textContent = firstWeek ? "in our first week" : "since launch";
+  if (body) body.textContent = firstWeek
+    ? "Across YouTube and Instagram, in the first seven days after the channel launched on 13 November 2026."
+    : "Across YouTube and Instagram since the channel launched on 13 November 2026.";
+}
+
 function setStamp(d) {
   const el = document.querySelector("[data-stamp]");
   if (!el) return;
@@ -156,7 +166,7 @@ function setStamp(d) {
 
 function render(d, first = false) {
   d = derive(d);
-  setStats(d, first); setRing(d); setRails(d); setTops(d); setStamp(d);
+  setStats(d, first); setRing(d); setRails(d); setTops(d); setStamp(d); setPeriod(d);
 }
 
 // broken remote thumbnails (expired Instagram CDN links) fall back to the avatar

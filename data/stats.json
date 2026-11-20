@@ -1,14 +1,14 @@
 {
   "source": "snapshot",
   "updatedAt": "2026-11-20T18:00:00Z",
-  "note": "Fallback numbers used when /api/stats is unavailable. Channel and per-post numbers from vidIQ (20 Nov 2026). Instagram 30-day views = sum of plays on reels posted in the last 30 days; follower count from earlier on 20 Nov.",
+  "note": "Fallback numbers used when /api/stats is unavailable. YouTube channel views and likes from YouTube Studio; per-post numbers from vidIQ (20 Nov 2026). Instagram 30-day views = sum of plays on reels posted in the last 30 days; follower count from earlier on 20 Nov.",
   "youtube": {
     "handle": "@rblxanimates",
     "url": "https://www.youtube.com/@rblxanimates",
     "subscribers": 33,
-    "views": 8573,
+    "views": 12600,
     "videos": 8,
-    "likes": 147,
+    "likes": 179,
     "comments": 11,
     "top": [
       {
