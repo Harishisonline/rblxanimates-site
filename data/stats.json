@@ -1,21 +1,66 @@
 {
   "source": "snapshot",
-  "updatedAt": "2026-11-20T12:00:00Z",
-  "note": "Fallback numbers used when /api/stats is unavailable. YouTube channel totals from YouTube Studio; per-video and Instagram per-reel numbers from vidIQ; Instagram 30-day views from the Professional Dashboard.",
+  "updatedAt": "2026-11-20T18:00:00Z",
+  "note": "Fallback numbers used when /api/stats is unavailable. Channel and per-post numbers from vidIQ (20 Nov 2026). Instagram 30-day views = sum of plays on reels posted in the last 30 days; follower count from earlier on 20 Nov.",
   "youtube": {
     "handle": "@rblxanimates",
     "url": "https://www.youtube.com/@rblxanimates",
-    "subscribers": 27,
-    "views": 8500,
-    "videos": 7,
-    "likes": 142,
-    "comments": 8,
+    "subscribers": 33,
+    "views": 8573,
+    "videos": 8,
+    "likes": 147,
+    "comments": 11,
     "top": [
-      { "id": "x_Jv9GBD8Oc", "title": "My bully begged me for help… but should I help him? Part 2", "url": "https://www.youtube.com/shorts/x_Jv9GBD8Oc", "thumb": "./media/eps/x_Jv9GBD8Oc.jpg", "views": 1579, "likes": 35, "comments": 0, "publishedAt": "2026-11-17T13:04:48Z" },
-      { "id": "VZqRFIzQjU4", "title": "In Blox Town, your wrist number decides everything", "url": "https://www.youtube.com/shorts/VZqRFIzQjU4", "thumb": "./media/eps/VZqRFIzQjU4.jpg", "views": 1563, "likes": 19, "comments": 3, "publishedAt": "2026-11-14T09:10:03Z" },
-      { "id": "ump5uhwk8LM", "title": "I told one secret. By lunch, everyone knew.", "url": "https://www.youtube.com/shorts/ump5uhwk8LM", "thumb": "./media/eps/ump5uhwk8LM.jpg", "views": 1543, "likes": 28, "comments": 2, "publishedAt": "2026-11-16T11:24:32Z" },
-      { "id": "ZJiItqao6N0", "title": "They laughed at the poor kid… but they didn't know his story", "url": "https://www.youtube.com/shorts/ZJiItqao6N0", "thumb": "./media/eps/ZJiItqao6N0.jpg", "views": 1495, "likes": 27, "comments": 0, "publishedAt": "2026-11-15T12:41:34Z" },
-      { "id": "SIOpqV9Y4mE", "title": "Your next Roblox obsession starts here", "url": "https://www.youtube.com/shorts/SIOpqV9Y4mE", "thumb": "./media/eps/SIOpqV9Y4mE.jpg", "views": 1441, "likes": 18, "comments": 4, "publishedAt": "2026-11-13T11:14:34Z" }
+      {
+        "id": "x_Jv9GBD8Oc",
+        "title": "My bully begged me for help… but should I help him? Part 2",
+        "url": "https://www.youtube.com/shorts/x_Jv9GBD8Oc",
+        "thumb": "./media/eps/x_Jv9GBD8Oc.jpg",
+        "views": 1600,
+        "likes": 35,
+        "comments": 0,
+        "publishedAt": "2026-11-17T13:04:48Z"
+      },
+      {
+        "id": "VZqRFIzQjU4",
+        "title": "In Blox Town, your wrist number decides everything",
+        "url": "https://www.youtube.com/shorts/VZqRFIzQjU4",
+        "thumb": "./media/eps/VZqRFIzQjU4.jpg",
+        "views": 1565,
+        "likes": 19,
+        "comments": 3,
+        "publishedAt": "2026-11-14T09:10:03Z"
+      },
+      {
+        "id": "ump5uhwk8LM",
+        "title": "I told one secret. By lunch, everyone knew.",
+        "url": "https://www.youtube.com/shorts/ump5uhwk8LM",
+        "thumb": "./media/eps/ump5uhwk8LM.jpg",
+        "views": 1551,
+        "likes": 28,
+        "comments": 2,
+        "publishedAt": "2026-11-16T11:24:32Z"
+      },
+      {
+        "id": "ZJiItqao6N0",
+        "title": "They laughed at the poor kid… but they didn't know his story",
+        "url": "https://www.youtube.com/shorts/ZJiItqao6N0",
+        "thumb": "./media/eps/ZJiItqao6N0.jpg",
+        "views": 1496,
+        "likes": 27,
+        "comments": 0,
+        "publishedAt": "2026-11-15T12:41:34Z"
+      },
+      {
+        "id": "5QmctXcWvp0",
+        "title": "In this town, laughing charges you",
+        "url": "https://www.youtube.com/shorts/5QmctXcWvp0",
+        "thumb": "./media/eps/5QmctXcWvp0.jpg",
+        "views": 1473,
+        "likes": 17,
+        "comments": 0,
+        "publishedAt": "2026-11-18T22:24:29Z"
+      }
     ]
   },
   "instagram": {
@@ -23,16 +68,61 @@
     "url": "https://www.instagram.com/rblxanimates/",
     "followers": 12,
     "posts": 8,
-    "views30": 16033,
-    "growthPct": 100,
-    "totalViews": 20232,
-    "likes": 486,
+    "views30": 38635,
+    "growthPct": null,
+    "totalViews": 38635,
+    "likes": 1154,
     "top": [
-      { "id": "Df5kk4dugB1", "title": "In this town, your battery only charges when people laugh", "url": "https://www.instagram.com/reel/Df5kk4dugB1/", "thumb": "./media/ig/Df5kk4dugB1.jpg", "views": 9100, "likes": 208, "comments": 0, "publishedAt": "2026-11-18T00:00:00Z" },
-      { "id": "Df8FDoqhSmR", "title": "Your shadow does your chores… until you hit 300", "url": "https://www.instagram.com/reel/Df8FDoqhSmR/", "thumb": "./media/ig/Df8FDoqhSmR.jpg", "views": 2800, "likes": 88, "comments": 1, "publishedAt": "2026-11-19T00:00:00Z" },
-      { "id": "DfrhXX-hWXi", "title": "One number decides your entire life. He got zero.", "url": "https://www.instagram.com/reel/DfrhXX-hWXi/", "thumb": "./media/ig/DfrhXX-hWXi.jpg", "views": 2200, "likes": 39, "comments": 0, "publishedAt": "2026-11-13T00:00:00Z" },
-      { "id": "DfwzcgHsyTT", "title": "They laughed at the poor kid… but they didn't know his story", "url": "https://www.instagram.com/reel/DfwzcgHsyTT/", "thumb": "./media/ig/DfwzcgHsyTT.jpg", "views": 1600, "likes": 61, "comments": 0, "publishedAt": "2026-11-15T00:00:00Z" },
-      { "id": "Df1_wMGBmNZ", "title": "The bully who made my life miserable is now begging me for help", "url": "https://www.instagram.com/reel/Df1_wMGBmNZ/", "thumb": "./media/ig/Df1_wMGBmNZ.jpg", "views": 1500, "likes": 34, "comments": 2, "publishedAt": "2026-11-17T00:00:00Z" }
+      {
+        "id": "Df8FDoqhSmR",
+        "title": "Your shadow does your chores… until you hit 300",
+        "url": "https://www.instagram.com/reel/Df8FDoqhSmR/",
+        "thumb": "./media/ig/Df8FDoqhSmR.jpg",
+        "views": 21100,
+        "likes": 747,
+        "comments": 1,
+        "publishedAt": "2026-11-19T00:00:00Z"
+      },
+      {
+        "id": "Df5kk4dugB1",
+        "title": "In this town, your battery only charges when people laugh",
+        "url": "https://www.instagram.com/reel/Df5kk4dugB1/",
+        "thumb": "./media/ig/Df5kk4dugB1.jpg",
+        "views": 9200,
+        "likes": 209,
+        "comments": 0,
+        "publishedAt": "2026-11-18T00:00:00Z"
+      },
+      {
+        "id": "DfrhXX-hWXi",
+        "title": "One number decides your entire life. He got zero.",
+        "url": "https://www.instagram.com/reel/DfrhXX-hWXi/",
+        "thumb": "./media/ig/DfrhXX-hWXi.jpg",
+        "views": 2200,
+        "likes": 40,
+        "comments": 0,
+        "publishedAt": "2026-11-13T00:00:00Z"
+      },
+      {
+        "id": "DfwzcgHsyTT",
+        "title": "They laughed at the poor kid… but they didn't know his story",
+        "url": "https://www.instagram.com/reel/DfwzcgHsyTT/",
+        "thumb": "./media/ig/DfwzcgHsyTT.jpg",
+        "views": 1600,
+        "likes": 62,
+        "comments": 0,
+        "publishedAt": "2026-11-15T00:00:00Z"
+      },
+      {
+        "id": "Df1_wMGBmNZ",
+        "title": "The bully who made my life miserable is now begging me for help",
+        "url": "https://www.instagram.com/reel/Df1_wMGBmNZ/",
+        "thumb": "./media/ig/Df1_wMGBmNZ.jpg",
+        "views": 1500,
+        "likes": 36,
+        "comments": 2,
+        "publishedAt": "2026-11-17T00:00:00Z"
+      }
     ]
   }
 }
